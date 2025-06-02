@@ -3,8 +3,8 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${message != null}">
-                <h2>id : ${message.id} のタスク編集ページ</h2>
+            <c:when test="${task != null}">
+                <h2>id : ${task.id} のタスク編集ページ</h2>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:if test="${errors != null}">
@@ -17,8 +17,8 @@
                         </div>
                     </c:if>
 
-                    <label for="content_msg">タスク</label><br />
-                    <input type="text" name="content" id="content_msg" value="${message.content}" />
+                    <label for="content_tsk">タスク</label><br />
+                    <input type="text" name="content" id="content_tsk" value="${task.content}" />
                     <br /><br />
 
                     <input type="hidden" name="_token" value="${_token}" />
